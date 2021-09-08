@@ -13,7 +13,7 @@ Azure Data Factory module
 
 | Name | Source | Version |
 |------|--------|---------|
-| datafactory\_diagnostics | claranet/diagnostic-settings/azurerm | 4.0.1 |
+| datafactory\_diagnostics | claranet/diagnostic-settings/azurerm | 4.0.2 |
 
 ## Resources
 
@@ -30,7 +30,7 @@ Azure Data Factory module
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration | `map(string)` | `{}` | no |
-| global\_parameter | Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter | `any` | `{}` | no |
+| global\_parameter | Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter | `list(map(string))` | `{}` | no |
 | location | Azure region to use | `string` | n/a | yes |
 | location\_short | Short string for Azure location | `string` | n/a | yes |
 | logs\_categories | Log categories to send to destinations. | `list(string)` | `null` | no |

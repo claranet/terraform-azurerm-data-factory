@@ -65,7 +65,7 @@ variable "github_configuration" {
 
 variable "global_parameter" {
   description = "Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter"
-  type        = any
+  type        = list(map(string))
   default     = {}
 }
 
