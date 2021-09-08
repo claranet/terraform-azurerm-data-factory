@@ -7,6 +7,7 @@ Azure Data Factory module
 
 | Name | Version |
 |------|---------|
+| azurecaf | >= 1.2.6 |
 | azurerm | >= 2.68 |
 
 ## Modules
@@ -19,6 +20,7 @@ Azure Data Factory module
 
 | Name | Type |
 |------|------|
+| [azurecaf_name.data_factory_name](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/name) | resource |
 | [azurerm_data_factory.main_data_factory](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory) | resource |
 
 ## Inputs
