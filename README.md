@@ -26,7 +26,7 @@ Azure Data Factory module
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
-| custom\_data\_factory\_name | Name of the resource | `string` | n/a | yes |
+| custom\_data\_factory\_name | Custom name of the Data Factory | `string` | n/a | yes |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration | `map(string)` | `{}` | no |
