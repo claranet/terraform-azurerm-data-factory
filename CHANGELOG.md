@@ -1,4 +1,4 @@
 # Unreleased
 
 Added
-  * AZ-563: First release
+  * AZ-563: Initialize Azure Data Factory module
