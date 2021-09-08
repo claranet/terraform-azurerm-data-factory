@@ -30,7 +30,7 @@ Azure Data Factory module
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration | `map(string)` | `{}` | no |
-| global\_parameter | Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter | `list(map(string))` | `{}` | no |
+| global\_parameter | Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter | `list(map(string))` | `[]` | no |
 | location | Azure region to use | `string` | n/a | yes |
 | location\_short | Short string for Azure location | `string` | n/a | yes |
 | logs\_categories | Log categories to send to destinations. | `list(string)` | `null` | no |
@@ -49,6 +49,7 @@ Azure Data Factory module
 | Name | Description |
 |------|-------------|
 | data\_factory\_id | Data factory id |
+| data\_factory\_managed\_identity | Type of managed identity |
 | data\_factory\_name | Data factory name |
 <!-- END_TF_DOCS -->
 
