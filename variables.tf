@@ -41,7 +41,7 @@ variable "name_prefix" {
 }
 
 variable "custom_data_factory_name" {
-  description = "Name of the resource"
+  description = "Custom name of the Data Factory"
   type        = string
 }
 
