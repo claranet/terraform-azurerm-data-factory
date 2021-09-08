@@ -38,6 +38,7 @@ Azure Data Factory module
 | logs\_metrics\_categories | Metrics categories to send to destinations. | `list(string)` | `null` | no |
 | logs\_retention\_days | Number of days to keep logs on storage account | `number` | `30` | no |
 | managed\_virtual\_network\_enabled | True to enable managed virtual network | `bool` | `true` | no |
+| name\_prefix | Optional prefix for data factory name | `string` | `""` | no |
 | public\_network\_enabled | True to make data factory visible to the public network | `bool` | `true` | no |
 | resource\_group\_name | Name of the resource group | `string` | n/a | yes |
 | stack | Project stack name | `string` | n/a | yes |
