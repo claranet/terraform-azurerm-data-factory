@@ -1,7 +1,7 @@
 resource "azurecaf_name" "data_factory_name" {
   name          = "data-factory"
   resource_type = "azurerm_data_factory"
-  prefixes      = [local.name_prefix, var.stack, var.client_name, var.location_short, var.environment]
+  prefixes      = [var.stack, var.client_name, var.location_short, var.environment]
 }
 
 resource "azurerm_data_factory" "main_data_factory" {
