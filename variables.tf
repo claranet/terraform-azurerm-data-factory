@@ -43,6 +43,7 @@ variable "name_prefix" {
 variable "custom_data_factory_name" {
   description = "Custom name of the Data Factory"
   type        = string
+  default     = null
 }
 
 variable "managed_virtual_network_enabled" {
@@ -74,7 +75,6 @@ variable "vsts_configuration" {
   type        = map(string)
   default     = {}
 }
-
 
 # LOGS
 
