@@ -34,12 +34,6 @@ variable "extra_tags" {
   default     = {}
 }
 
-variable "name_prefix" {
-  description = "Optional prefix for data factory name"
-  type        = string
-  default     = ""
-}
-
 variable "custom_data_factory_name" {
   description = "Custom name of the Data Factory"
   type        = string
