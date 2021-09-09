@@ -1,6 +1,6 @@
 # Data Factory
 
-Azure Data Factory module
+This module creates an Azure Data Factory with diagnostic settings enabled.
 
 <!-- BEGIN_TF_DOCS -->
 ## Providers
