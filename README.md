@@ -1,8 +1,71 @@
-# Data Factory
+# Azure Data Factory
 
 This module creates an Azure Data Factory with diagnostic settings enabled.
 
 <!-- BEGIN_TF_DOCS -->
+## Global versioning rule for Claranet Azure modules
+
+| Module version | Terraform version | AzureRM version |
+| -------------- | ----------------- | --------------- |
+| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
+| >= 4.x.x       | 0.13.x            | >= 2.0          |
+| >= 3.x.x       | 0.12.x            | >= 2.0          |
+| >= 2.x.x       | 0.12.x            | < 2.0           |
+| <  2.x.x       | 0.11.x            | < 2.0           |
+
+## Usage
+
+This module is optimized to work with the [Claranet terraform-wrapper](https://github.com/claranet/terraform-wrapper) tool
+which set some terraform variables in the environment needed by this module.
+More details about variables set by the `terraform-wrapper` available in the [documentation](https://github.com/claranet/terraform-wrapper#environment).
+
+```hcl
+module "azure_region" {
+  source  = "claranet/regions/azurerm"
+  version = "x.x.x"
+
+  azure_region = var.azure_region
+}
+
+module "rg" {
+  source  = "claranet/rg/azurerm"
+  version = "x.x.x"
+
+  location    = module.azure_region.location
+  client_name = var.client_name
+  environment = var.environment
+  stack       = var.stack
+}
+
+module "logs" {
+  source  = "claranet/run-common/azurerm//modules/logs"
+  version = "x.x.x"
+
+  client_name         = var.client_name
+  environment         = var.environment
+  stack               = var.stack
+  location            = module.azure_region.location
+  location_short      = module.azure_region.location_short
+  resource_group_name = module.rg.resource_group_name
+}
+
+module "data_factory" {
+  source  = "claranet/data-factory/azurerm"
+  version = "x.x.x"
+
+  client_name    = var.client_name
+  environment    = var.environment
+  location       = module.azure_region.location
+  location_short = module.azure_region.location_short
+  stack          = var.stack
+
+  resource_group_name = module.rg.resource_group_name
+
+  logs_destinations_ids = [module.logs.log_analytics_workspace_id]
+  logs_retention_days   = 90
+}
+```
+
 ## Providers
 
 | Name | Version |
@@ -56,4 +119,4 @@ This module creates an Azure Data Factory with diagnostic settings enabled.
 
 ## Related documentation
 
-Microsoft Azure documentation - Data Factory: https://docs.microsoft.com/en-us/azure/data-factory/
+Microsoft Azure documentation: [docs.microsoft.com/en-us/azure/data-factory](https://docs.microsoft.com/en-us/azure/data-factory/)
