@@ -9,3 +9,7 @@ resource_group_name="test-rg"
 extra_tags = {
     foo = "bar"
 }
+
+public_network_enabled=false
+managed_virtual_network_enabled=false
+logs_retention_days=90
