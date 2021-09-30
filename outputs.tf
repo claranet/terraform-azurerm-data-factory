@@ -10,5 +10,5 @@ output "data_factory_name" {
 
 output "data_factory_managed_identity" {
   description = "Type of managed identity"
-  value       = azurerm_data_factory.main_data_factory.identity[0].type
+  value       = azurerm_data_factory.main_data_factory.identity
 }
