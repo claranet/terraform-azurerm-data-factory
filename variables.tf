@@ -55,19 +55,19 @@ variable "public_network_enabled" {
 variable "github_configuration" {
   description = "Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration"
   type        = map(string)
-  default     = {}
+  default     = null
 }
 
-variable "global_parameter" {
+variable "global_parameters" {
   description = "Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter"
   type        = list(map(string))
   default     = []
 }
 
 variable "vsts_configuration" {
-  description = "Visual Studio Team Services configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration"
+  description = "Azure DevOps configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration"
   type        = map(string)
-  default     = {}
+  default     = null
 }
 
 # LOGS

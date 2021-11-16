@@ -13,7 +13,7 @@ resource "azurerm_data_factory" "main_data_factory" {
   public_network_enabled          = var.public_network_enabled
 
   dynamic "github_configuration" {
-    for_each = try(var.github_configuration.value, [])
+    for_each = var.github_configuration == null ? [] : ["_"]
 
     content {
       account_name    = github_configuration.value.account_name
@@ -25,7 +25,7 @@ resource "azurerm_data_factory" "main_data_factory" {
   }
 
   dynamic "global_parameter" {
-    for_each = var.global_parameter
+    for_each = var.global_parameters
 
     content {
       name  = global_parameter.value.name
@@ -39,7 +39,7 @@ resource "azurerm_data_factory" "main_data_factory" {
   }
 
   dynamic "vsts_configuration" {
-    for_each = try(var.vsts_configuration.value, [])
+    for_each = var.vsts_configuration == null ? [] : ["_"]
 
     content {
       account_name    = vsts_configuration.value.account_name
