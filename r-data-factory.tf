@@ -1,9 +1,3 @@
-resource "azurecaf_name" "data_factory_name" {
-  name          = "data-factory"
-  resource_type = "azurerm_data_factory"
-  prefixes      = [var.stack, var.client_name, var.location_short, var.environment]
-}
-
 resource "azurerm_data_factory" "main_data_factory" {
   name                = local.data_factory_name
   resource_group_name = var.resource_group_name

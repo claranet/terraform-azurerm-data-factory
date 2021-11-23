@@ -34,12 +34,6 @@ variable "extra_tags" {
   default     = {}
 }
 
-variable "custom_data_factory_name" {
-  description = "Custom name of the Data Factory"
-  type        = string
-  default     = null
-}
-
 variable "managed_virtual_network_enabled" {
   description = "True to enable managed virtual network"
   type        = bool
