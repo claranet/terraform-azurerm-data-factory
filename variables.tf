@@ -34,12 +34,6 @@ variable "extra_tags" {
   default     = {}
 }
 
-variable "custom_data_factory_name" {
-  description = "Custom name of the Data Factory"
-  type        = string
-  default     = null
-}
-
 variable "managed_virtual_network_enabled" {
   description = "True to enable managed virtual network"
   type        = bool
@@ -68,29 +62,4 @@ variable "vsts_configuration" {
   description = "Azure DevOps configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration"
   type        = map(string)
   default     = null
-}
-
-# LOGS
-
-variable "logs_destinations_ids" {
-  description = "List of destination resources Ids for logs diagnostics destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set. Empty list to disable logging."
-  type        = list(string)
-}
-
-variable "logs_categories" {
-  description = "Log categories to send to destinations."
-  type        = list(string)
-  default     = null
-}
-
-variable "logs_metrics_categories" {
-  description = "Metrics categories to send to destinations."
-  type        = list(string)
-  default     = null
-}
-
-variable "logs_retention_days" {
-  description = "Number of days to keep logs on storage account"
-  type        = number
-  default     = 30
 }
