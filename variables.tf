@@ -96,7 +96,7 @@ variable "azure_ssis_integration_runtime_configuration" {
 
 variable "azure_integration_runtime_configuration" {
   description = <<EOF
-    Map of configuration of azure ssis integration runtime:
+    Map of configuration of azure integration runtime:
     `cleanup_enabled` (optional, defaults to true)
     `compute_type` (optional, defaults to General)
     `core_count` (optional, defaults to 8)
@@ -105,4 +105,9 @@ variable "azure_integration_runtime_configuration" {
   EOF
   type        = map(any)
   default     = {}
+}
+
+variable "is_production" {
+  description = "True if environment is production"
+  type        = bool
 }

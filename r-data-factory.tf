@@ -7,7 +7,7 @@ resource "azurerm_data_factory" "main_data_factory" {
   public_network_enabled          = var.public_network_enabled
 
   dynamic "github_configuration" {
-    for_each = var.github_configuration == null ? [] : ["_"]
+    for_each = toset(var.github_configuration == null || var.is_production ? [] : [var.github_configuration])
 
     content {
       account_name    = github_configuration.value.account_name
@@ -33,7 +33,7 @@ resource "azurerm_data_factory" "main_data_factory" {
   }
 
   dynamic "vsts_configuration" {
-    for_each = var.azure_devops_configuration == null ? [] : ["_"]
+    for_each = toset(var.azure_devops_configuration == null || var.is_production ? [] : [var.azure_devops_configuration])
 
     content {
       account_name    = vsts_configuration.value.account_name
