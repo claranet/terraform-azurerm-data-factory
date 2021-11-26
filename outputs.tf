@@ -15,9 +15,9 @@ output "data_factory_managed_identity" {
 
 output "data_factory_integration_runtime_id" {
   description = "Data factory integration runtime id"
-  value       = var.integration_runtime_type == "Azure" ? azurerm_data_factory_integration_runtime_azure.integration_runtime[0].id : (
-                var.integration_runtime_type == "AzureSSIS" ? azurerm_data_factory_integration_runtime_azure_ssis.integration_runtime[0].id : (
-                var.integration_runtime_type == "SelfHosted" ? azurerm_data_factory_integration_runtime_self_hosted.integration_runtime[0].id : null))
+  value = var.integration_runtime_type == "Azure" ? azurerm_data_factory_integration_runtime_azure.integration_runtime[0].id : (
+    var.integration_runtime_type == "AzureSSIS" ? azurerm_data_factory_integration_runtime_azure_ssis.integration_runtime[0].id : (
+  var.integration_runtime_type == "SelfHosted" ? azurerm_data_factory_integration_runtime_self_hosted.integration_runtime[0].id : null))
 }
 
 output "data_factory_integration_runtime_type" {
