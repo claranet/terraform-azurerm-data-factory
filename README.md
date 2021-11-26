@@ -63,8 +63,6 @@ module "data_factory" {
 
   resource_group_name = module.rg.resource_group_name
 
-  is_production = true
-
   logs_destinations_ids = [module.logs.log_analytics_workspace_id]
   logs_retention_days   = 90
 }
@@ -109,7 +107,6 @@ module "data_factory" {
 | integration\_runtime\_custom\_name | Name of the integration\_runtime resource | `string` | `null` | no |
 | integration\_runtime\_description | Integration runtime description | `string` | `null` | no |
 | integration\_runtime\_type | Specifies the integration runtime type. Possible values are `Azure`, `AzureSSIS` and `SelfHosted` | `string` | `null` | no |
-| is\_production | True if environment is production | `bool` | n/a | yes |
 | location | Azure region to use | `string` | n/a | yes |
 | location\_short | Short string for Azure location | `string` | n/a | yes |
 | logs\_categories | Log categories to send to destinations. | `list(string)` | `null` | no |
@@ -129,6 +126,8 @@ module "data_factory" {
 | Name | Description |
 |------|-------------|
 | data\_factory\_id | Data factory id |
+| data\_factory\_integration\_runtime\_id | Data factory integration runtime id |
+| data\_factory\_integration\_runtime\_type | Data factory integration runtime type |
 | data\_factory\_managed\_identity | Type of managed identity |
 | data\_factory\_name | Data factory name |
 <!-- END_TF_DOCS -->

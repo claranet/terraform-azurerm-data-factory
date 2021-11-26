@@ -39,8 +39,6 @@ module "data_factory" {
 
   resource_group_name = module.rg.resource_group_name
 
-  is_production = true
-
   logs_destinations_ids = [module.logs.log_analytics_workspace_id]
   logs_retention_days   = 90
 }

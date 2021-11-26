@@ -106,8 +106,3 @@ variable "azure_integration_runtime_configuration" {
   type        = map(any)
   default     = {}
 }
-
-variable "is_production" {
-  description = "True if environment is production"
-  type        = bool
-}
