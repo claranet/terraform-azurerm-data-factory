@@ -96,14 +96,13 @@ module "data_factory" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | azure\_devops\_configuration | Azure DevOps configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration | `map(string)` | `null` | no |
-| azure\_integration\_runtime\_configuration | Map of configuration of azure integration runtime:<br>    `cleanup_enabled` (optional, defaults to true)<br>    `compute_type` (optional, defaults to General)<br>    `core_count` (optional, defaults to 8)<br>    `time_to_live_min` (optional, defaults to 0)<br>    `virtual_network_enabled` (optional, defaults to false) | `map(any)` | `{}` | no |
-| azure\_ssis\_integration\_runtime\_configuration | Map of configuration of azure ssis integration runtime:<br>    `node_size` (required)<br>    `number_of_nodes` (optional, defaults to 1)<br>    `max_parallel_executions_per_nodes` (optional, defaults to 1)<br>    `edition` (optional, defaults to Standard)<br>    `license_type` (optional, defaults to LicenseIncluded) | `map(any)` | `{}` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_data\_factory\_name | Custom name of the Data Factory, generated if not set. | `string` | `null` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration | `map(string)` | `null` | no |
 | global\_parameters | Global parameters for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter | `list(map(string))` | `[]` | no |
+| integration\_runtime\_configuration | Parameters used to configure `AzureSSIS` integration runtime:<br>    `node_size` (optional, defaults to `Standard_D2_v3`)<br>    `number_of_nodes` (optional, defaults to `1`)<br>    `max_parallel_executions_per_nodes` (optional, defaults to `1`)<br>    `edition` (optional, defaults to `Standard`)<br>    `license_type` (optional, defaults to `LicenseIncluded`)<br>  Parameters used to configure `Azure` integration runtime<br>    `cleanup_enabled` (optional, defaults to `true`)<br>    `compute_type` (optional, defaults to `General`)<br>    `core_count` (optional, defaults to `8`)<br>    `time_to_live_min` (optional, defaults to `0`)<br>    `virtual_network_enabled` (optional, defaults to `false`) | `map(any)` | `{}` | no |
 | integration\_runtime\_custom\_name | Name of the integration\_runtime resource | `string` | `null` | no |
 | integration\_runtime\_description | Integration runtime description | `string` | `null` | no |
 | integration\_runtime\_type | Specifies the integration runtime type. Possible values are `Azure`, `AzureSSIS` and `SelfHosted` | `string` | `null` | no |

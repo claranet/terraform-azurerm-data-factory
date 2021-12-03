@@ -81,28 +81,21 @@ variable "integration_runtime_description" {
   default     = null
 }
 
-variable "azure_ssis_integration_runtime_configuration" {
+variable "integration_runtime_configuration" {
   description = <<EOF
-  Map of configuration of azure ssis integration runtime:
-    `node_size` (required)
-    `number_of_nodes` (optional, defaults to 1)
-    `max_parallel_executions_per_nodes` (optional, defaults to 1)
-    `edition` (optional, defaults to Standard)
-    `license_type` (optional, defaults to LicenseIncluded)
+  Parameters used to configure `AzureSSIS` integration runtime:
+    `node_size` (optional, defaults to `Standard_D2_v3`)
+    `number_of_nodes` (optional, defaults to `1`)
+    `max_parallel_executions_per_nodes` (optional, defaults to `1`)
+    `edition` (optional, defaults to `Standard`)
+    `license_type` (optional, defaults to `LicenseIncluded`)
+  Parameters used to configure `Azure` integration runtime
+    `cleanup_enabled` (optional, defaults to `true`)
+    `compute_type` (optional, defaults to `General`)
+    `core_count` (optional, defaults to `8`)
+    `time_to_live_min` (optional, defaults to `0`)
+    `virtual_network_enabled` (optional, defaults to `false`)
   EOF
-  type        = map(any)
-  default     = {}
-}
-
-variable "azure_integration_runtime_configuration" {
-  description = <<EOF
-    Map of configuration of azure integration runtime:
-    `cleanup_enabled` (optional, defaults to true)
-    `compute_type` (optional, defaults to General)
-    `core_count` (optional, defaults to 8)
-    `time_to_live_min` (optional, defaults to 0)
-    `virtual_network_enabled` (optional, defaults to false)
-  EOF
-  type        = map(any)
-  default     = {}
+  type = map(any)
+  default = {}
 }
