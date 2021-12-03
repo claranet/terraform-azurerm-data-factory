@@ -96,6 +96,6 @@ variable "integration_runtime_configuration" {
     `time_to_live_min` (optional, defaults to `0`)
     `virtual_network_enabled` (optional, defaults to `false`)
   EOF
-  type = map(any)
-  default = {}
+  type        = map(any)
+  default     = {}
 }
