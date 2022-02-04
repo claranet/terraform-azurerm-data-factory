@@ -28,12 +28,6 @@ variable "client_name" {
   type        = string
 }
 
-variable "extra_tags" {
-  description = "Extra tags to add"
-  type        = map(string)
-  default     = {}
-}
-
 variable "managed_virtual_network_enabled" {
   description = "True to enable managed virtual network"
   type        = bool
