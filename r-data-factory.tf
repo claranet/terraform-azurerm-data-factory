@@ -58,7 +58,7 @@ resource "azurerm_data_factory_integration_runtime_azure" "integration_runtime" 
   resource_group_name = var.resource_group_name
   description         = var.integration_runtime_description
 
-  cleanup_enabled         = lookup(var.integration_runtime_configuration, "cleanup_enabled", true)
+  cleanup_enabled         = lookup(var.integration_runtime_configuration, "cleanup_enabled", null)
   compute_type            = lookup(var.integration_runtime_configuration, "compute_type", "General")
   core_count              = lookup(var.integration_runtime_configuration, "core_count", 8)
   time_to_live_min        = lookup(var.integration_runtime_configuration, "time_to_live_min", 0)
@@ -83,7 +83,7 @@ resource "azurerm_data_factory_integration_runtime_azure_ssis" "integration_runt
   resource_group_name = var.resource_group_name
   description         = var.integration_runtime_description
 
-  node_size                        = lookup(var.integration_runtime_configuration, "node_size", "Standard_D2_v3")
+  node_size                        = lookup(var.integration_runtime_configuration, "node_size", null)
   number_of_nodes                  = lookup(var.integration_runtime_configuration, "number_of_nodes", 1)
   max_parallel_executions_per_node = lookup(var.integration_runtime_configuration, "max_parallel_executions_per_node", 1)
   edition                          = lookup(var.integration_runtime_configuration, "edition", "Standard")
