@@ -79,7 +79,7 @@ module "data_factory" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| datafactory\_diagnostics | claranet/diagnostic-settings/azurerm | 4.0.3 |
+| diagnostics | claranet/diagnostic-settings/azurerm | 5.0.0 |
 
 ## Resources
 
@@ -98,6 +98,7 @@ module "data_factory" {
 | azure\_devops\_configuration | Azure DevOps configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration | `map(string)` | `null` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_data\_factory\_name | Custom name of the Data Factory, generated if not set. | `string` | `null` | no |
+| custom\_diagnostic\_settings\_name | Custom name of the diagnostics settings, name will be 'default' if not set. | `string` | `"default"` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. See documentation at https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration | `map(string)` | `null` | no |
