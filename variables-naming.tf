@@ -23,3 +23,9 @@ variable "custom_data_factory_name" {
   type        = string
   default     = null
 }
+
+variable "integration_runtime_custom_name" {
+  description = "Name of the integration_runtime resource"
+  type        = string
+  default     = null
+}
