@@ -1,3 +1,8 @@
+# Unreleased
+
+Breaking
+  * AZ-717: Update to azurerm provider v3 
+
 # v5.0.0 - 2022-02-04
 
 Added
