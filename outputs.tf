@@ -23,14 +23,14 @@ output "data_factory_integration_runtime_type" {
   value       = var.integration_runtime_type
 }
 
-output "data_factory_self_hosted_integration_runtime_primary_auth_key" {
+output "data_factory_self_hosted_integration_runtime_primary_authorization_key" {
   description = "The self hosted integration runtime primary authentication key"
-  value       = local.self_hosted_integration_runtime_primary_auth_key
+  value       = one(azurerm_data_factory_integration_runtime_self_hosted.integration_runtime[*].primary_authorization_key)
   sensitive   = true
 }
 
-output "data_factory_self_hosted_integration_runtime_secondary_auth_key" {
+output "data_factory_self_hosted_integration_runtime_secondary_authorization_key" {
   description = "The self hosted integration runtime secondary authentication key"
-  value       = local.self_hosted_integration_runtime_secondary_auth_key
+  value       = one(azurerm_data_factory_integration_runtime_self_hosted.integration_runtime[*].secondary_authorization_key)
   sensitive   = true
 }

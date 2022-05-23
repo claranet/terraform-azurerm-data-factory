@@ -39,6 +39,8 @@ module "data_factory" {
 
   resource_group_name = module.rg.resource_group_name
 
+  integration_runtime_type = "SelfHosted"
+
   logs_destinations_ids = [module.logs.log_analytics_workspace_id]
   logs_retention_days   = 90
 }
