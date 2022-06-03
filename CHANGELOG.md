@@ -1,4 +1,4 @@
-# Unreleased
+# v6.0.0 - 2022-06-03
 
 Breaking
   * AZ-717: Update to azurerm provider v3 
