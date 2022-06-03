@@ -52,11 +52,10 @@ resource "azurerm_data_factory" "main_data_factory" {
 resource "azurerm_data_factory_integration_runtime_azure" "integration_runtime" {
   count = var.integration_runtime_type == "Azure" ? 1 : 0
 
-  data_factory_name   = azurerm_data_factory.main_data_factory.name
-  name                = var.integration_runtime_custom_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  description         = var.integration_runtime_description
+  data_factory_id = azurerm_data_factory.main_data_factory.id
+  name            = var.integration_runtime_custom_name
+  location        = var.location
+  description     = var.integration_runtime_description
 
   cleanup_enabled         = lookup(var.integration_runtime_configuration, "cleanup_enabled", null)
   compute_type            = lookup(var.integration_runtime_configuration, "compute_type", "General")
@@ -68,20 +67,18 @@ resource "azurerm_data_factory_integration_runtime_azure" "integration_runtime" 
 resource "azurerm_data_factory_integration_runtime_self_hosted" "integration_runtime" {
   count = var.integration_runtime_type == "SelfHosted" ? 1 : 0
 
-  data_factory_name   = azurerm_data_factory.main_data_factory.name
-  name                = var.integration_runtime_custom_name
-  resource_group_name = var.resource_group_name
-  description         = var.integration_runtime_description
+  data_factory_id = azurerm_data_factory.main_data_factory.id
+  name            = var.integration_runtime_custom_name
+  description     = var.integration_runtime_description
 }
 
 resource "azurerm_data_factory_integration_runtime_azure_ssis" "integration_runtime" {
   count = var.integration_runtime_type == "AzureSSIS" ? 1 : 0
 
-  data_factory_name   = azurerm_data_factory.main_data_factory.name
-  name                = var.integration_runtime_custom_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  description         = var.integration_runtime_description
+  data_factory_id = azurerm_data_factory.main_data_factory.id
+  name            = var.integration_runtime_custom_name
+  location        = var.location
+  description     = var.integration_runtime_description
 
   node_size                        = lookup(var.integration_runtime_configuration, "node_size", null)
   number_of_nodes                  = lookup(var.integration_runtime_configuration, "number_of_nodes", 1)

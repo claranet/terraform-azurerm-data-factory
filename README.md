@@ -64,6 +64,8 @@ module "data_factory" {
 
   resource_group_name = module.rg.resource_group_name
 
+  integration_runtime_type = "SelfHosted"
+
   logs_destinations_ids = [module.logs.log_analytics_workspace_id]
   logs_retention_days   = 90
 }
@@ -74,7 +76,7 @@ module "data_factory" {
 | Name | Version |
 |------|---------|
 | azurecaf | >= 1.2.6 |
-| azurerm | >= 2.76 |
+| azurerm | ~> 3.0 |
 
 ## Modules
 
@@ -132,8 +134,8 @@ module "data_factory" {
 | data\_factory\_integration\_runtime\_type | Data factory integration runtime type |
 | data\_factory\_managed\_identity | Type of managed identity |
 | data\_factory\_name | Data factory name |
-| data\_factory\_self\_hosted\_integration\_runtime\_primary\_auth\_key | The self hosted integration runtime primary authentication key |
-| data\_factory\_self\_hosted\_integration\_runtime\_secondary\_auth\_key | The self hosted integration runtime secondary authentication key |
+| data\_factory\_self\_hosted\_integration\_runtime\_primary\_authorization\_key | The self hosted integration runtime primary authentication key |
+| data\_factory\_self\_hosted\_integration\_runtime\_secondary\_authorization\_key | The self hosted integration runtime secondary authentication key |
 <!-- END_TF_DOCS -->
 
 ## Related documentation

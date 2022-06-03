@@ -64,7 +64,7 @@ variable "integration_runtime_type" {
   default     = null
 
   validation {
-    condition     = var.integration_runtime_type == null || var.integration_runtime_type == "Azure" || var.integration_runtime_type == "SelfHosted" || var.integration_runtime_type == "AzureSSIS"
+    condition     = contains(["Azure", "SelfHosted", "AzureSSIS", null], var.integration_runtime_type)
     error_message = "Possible values for `integration_runtime_type` variable are \"Azure\", \"AzureSSIS\" and \"SelfHosted\"."
   }
 }
