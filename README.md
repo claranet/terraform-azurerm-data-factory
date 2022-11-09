@@ -121,7 +121,7 @@ module "data_factory" {
 | managed\_virtual\_network\_enabled | True to enable managed virtual network | `bool` | `true` | no |
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
 | name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
-| public\_network\_enabled | True to make data factory visible to the public network | `bool` | `true` | no |
+| public\_network\_enabled | True to make data factory visible to the public network | `bool` | `false` | no |
 | resource\_group\_name | Name of the resource group | `string` | n/a | yes |
 | stack | Project stack name | `string` | n/a | yes |
 | use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |

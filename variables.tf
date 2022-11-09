@@ -37,7 +37,7 @@ variable "managed_virtual_network_enabled" {
 variable "public_network_enabled" {
   description = "True to make data factory visible to the public network"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "github_configuration" {
