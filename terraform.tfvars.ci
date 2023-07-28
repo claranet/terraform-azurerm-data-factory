@@ -11,5 +11,5 @@ extra_tags = {
 }
 
 public_network_enabled          = false
-managed_virtual_network_enabled = false
+managed_virtual_network_enabled = true
 logs_retention_days             = 90
