@@ -42,5 +42,4 @@ module "data_factory" {
   integration_runtime_type = "SelfHosted"
 
   logs_destinations_ids = [module.logs.log_analytics_workspace_id]
-  logs_retention_days   = 90
 }

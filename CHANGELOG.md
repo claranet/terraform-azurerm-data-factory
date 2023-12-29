@@ -1,7 +1,12 @@
+# Unreleased
+
+Changed
+  * AZ-993: Bump diagnostic-settings module
+
 # v6.2.0 - 2023-12-29
 
 Changed
-  * AZ-993: Bump diagnostic-settings modules
+  * AZ-993: Bump diagnostic-settings module
   * AZ-1039: Update example
 
 # v6.1.0 - 2022-11-10
