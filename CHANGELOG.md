@@ -1,12 +1,18 @@
+# v6.2.0 - 2023-12-29
+
+Changed
+  * AZ-993: Bump diagnostic-settings modules
+  * AZ-1039: Update example
+
 # v6.1.0 - 2022-11-10
 
 Changed
-  * AZ-901: Change default value for `public_network_enabled` variable to `false`  
+  * AZ-901: Change default value for `public_network_enabled` variable to `false`
 
 # v6.0.0 - 2022-06-03
 
 Breaking
-  * AZ-717: Update to azurerm provider v3 
+  * AZ-717: Update to azurerm provider v3
 
 # v5.0.0 - 2022-02-04
 
