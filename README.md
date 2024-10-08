@@ -86,7 +86,7 @@ module "data_factory" {
 
 | Name | Version |
 |------|---------|
-| azurecaf | >= 1.2.22 |
+| azurecaf | >= 1.2.28 |
 | azurerm | ~> 3.39 |
 
 ## Modules
