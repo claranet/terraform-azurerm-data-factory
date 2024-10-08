@@ -1,3 +1,22 @@
+## 7.0.0 (2024-10-08)
+
+### ⚠ BREAKING CHANGES
+
+* **AZ-840:** AzureRM provider v3+ required
+
+### Features
+
+* **AZ-840:** prepare `v7.0` 47fb0ba
+
+### Miscellaneous Chores
+
+* **deps:** update dependency claranet/diagnostic-settings/azurerm to v7 29257cf
+* **deps:** update dependency opentofu to v1.8.3 e576849
+* **deps:** update dependency pre-commit to v4 bc5a463
+* **deps:** update dependency trivy to v0.56.1 8433fd5
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v5 a6c3781
+* prepare for new examples structure 46537cb
+
 ## 6.4.0 (2024-10-03)
 
 ### Features
