@@ -1,32 +1,3 @@
-module "azure_region" {
-  source  = "claranet/regions/azurerm"
-  version = "x.x.x"
-
-  azure_region = var.azure_region
-}
-
-module "rg" {
-  source  = "claranet/rg/azurerm"
-  version = "x.x.x"
-
-  location    = module.azure_region.location
-  client_name = var.client_name
-  environment = var.environment
-  stack       = var.stack
-}
-
-module "logs" {
-  source  = "claranet/run/azurerm//modules/logs"
-  version = "x.x.x"
-
-  client_name         = var.client_name
-  environment         = var.environment
-  stack               = var.stack
-  location            = module.azure_region.location
-  location_short      = module.azure_region.location_short
-  resource_group_name = module.rg.resource_group_name
-}
-
 module "data_factory" {
   source  = "claranet/data-factory/azurerm"
   version = "x.x.x"
@@ -37,9 +8,9 @@ module "data_factory" {
   location_short = module.azure_region.location_short
   stack          = var.stack
 
-  resource_group_name = module.rg.resource_group_name
+  resource_group_name = module.rg.name
 
   integration_runtime_type = "SelfHosted"
 
-  logs_destinations_ids = [module.logs.log_analytics_workspace_id]
+  logs_destinations_ids = [module.logs.id]
 }
