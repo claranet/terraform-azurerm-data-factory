@@ -1,35 +1,35 @@
 output "resource" {
-  description = "Data factory resource object."
+  description = "Data Factory resource object."
   value       = azurerm_data_factory.main
 }
 
 output "id" {
-  description = "Data factory id."
+  description = "Data Factory id."
   value       = azurerm_data_factory.main.id
 }
 
 output "name" {
-  description = "Data factory name."
+  description = "Data Factory name."
   value       = azurerm_data_factory.main.name
 }
 
 output "managed_identity" {
-  description = "Type of managed identity."
+  description = "Data Factory Managed Identity."
   value       = azurerm_data_factory.main.identity
 }
 
 output "integration_runtime" {
-  description = "Data factory integration runtime resource object."
+  description = "Data Factory integration runtime resource object."
   value       = azurerm_data_factory_integration_runtime_self_hosted.integration_runtime
 }
 
 output "integration_runtime_id" {
-  description = "Data factory integration runtime id."
+  description = "Data Factory integration runtime id."
   value       = local.integration_runtime_id
 }
 
 output "integration_runtime_type" {
-  description = "Data factory integration runtime type."
+  description = "Data Factory integration runtime type."
   value       = var.integration_runtime_type
 }
 

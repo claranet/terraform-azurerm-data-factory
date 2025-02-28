@@ -12,7 +12,7 @@ variable "name_suffix" {
 }
 
 # Custom naming override
-variable "data_factory_custom_name" {
+variable "custom_name" {
   description = "Custom name of the Data Factory, generated if not set."
   type        = string
   default     = null
