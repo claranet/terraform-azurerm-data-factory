@@ -1,4 +1,4 @@
-resource "azurerm_data_factory" "main_data_factory" {
+resource "azurerm_data_factory" "main" {
   name                = local.data_factory_name
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -48,11 +48,15 @@ resource "azurerm_data_factory" "main_data_factory" {
   tags = merge(local.default_tags, var.extra_tags)
 }
 
+moved {
+  from = azurerm_data_factory.main_data_factory
+  to   = azurerm_data_factory.main
+}
 
 resource "azurerm_data_factory_integration_runtime_azure" "integration_runtime" {
   count = var.integration_runtime_type == "Azure" ? 1 : 0
 
-  data_factory_id = azurerm_data_factory.main_data_factory.id
+  data_factory_id = azurerm_data_factory.main.id
   name            = var.integration_runtime_custom_name
   location        = var.location
   description     = var.integration_runtime_description
@@ -67,7 +71,7 @@ resource "azurerm_data_factory_integration_runtime_azure" "integration_runtime" 
 resource "azurerm_data_factory_integration_runtime_self_hosted" "integration_runtime" {
   count = var.integration_runtime_type == "SelfHosted" ? 1 : 0
 
-  data_factory_id = azurerm_data_factory.main_data_factory.id
+  data_factory_id = azurerm_data_factory.main.id
   name            = var.integration_runtime_custom_name
   description     = var.integration_runtime_description
 }
@@ -75,7 +79,7 @@ resource "azurerm_data_factory_integration_runtime_self_hosted" "integration_run
 resource "azurerm_data_factory_integration_runtime_azure_ssis" "integration_runtime" {
   count = var.integration_runtime_type == "AzureSSIS" ? 1 : 0
 
-  data_factory_id = azurerm_data_factory.main_data_factory.id
+  data_factory_id = azurerm_data_factory.main.id
   name            = var.integration_runtime_custom_name
   location        = var.location
   description     = var.integration_runtime_description
