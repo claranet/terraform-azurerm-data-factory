@@ -13,10 +13,10 @@ output "name" {
   value       = azurerm_data_factory.main.name
 }
 
-output "managed_identity" {
-  description = "Data Factory Managed Identity."
-  value       = azurerm_data_factory.main.identity
-}
+output "identity_principal_id" {
+  description = "Data Factory system identity principal ID."
+  value       = try(azurerm_data_factory.main.identity[0], null)
+
 
 output "integration_runtime" {
   description = "Data Factory integration runtime resource object."
