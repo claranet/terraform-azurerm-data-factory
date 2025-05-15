@@ -1,3 +1,23 @@
+## 8.1.0 (2025-05-15)
+
+### Features
+
+* added support for user_assign identity to ADF 0731a6a
+* **data-factory:** ✨ add identity configuration options 9d26167
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.9.1 cc6ae62
+* **deps:** update dependency pre-commit to v4.2.0 9498dec
+* **deps:** update dependency terraform-docs to v0.20.0 c3a1798
+* **deps:** update dependency tflint to v0.57.0 9aa8c6c
+* **deps:** update dependency trivy to v0.61.1 c1a2d06
+* **deps:** update dependency trivy to v0.62.0 dd21c8b
+* **deps:** update dependency trivy to v0.62.1 241f838
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.22.0 de406f9
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.0 d7b6cc8
+* **deps:** update tools d7a0d0c
+
 ## 8.0.0 (2025-03-07)
 
 ### ⚠ BREAKING CHANGES
