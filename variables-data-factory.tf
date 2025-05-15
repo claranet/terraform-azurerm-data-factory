@@ -63,3 +63,17 @@ variable "integration_runtime_configuration" {
   type        = map(any)
   default     = {}
 }
+
+# Identity
+
+variable "identity_type" {
+  description = "Specifies the type of Managed Service Identity that should be configured on this Data Factory. Possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned` (to enable both)."
+  type        = string
+  default     = "SystemAssigned"
+}
+
+variable "identity_ids" {
+  description = "Specifies a list of User Assigned Managed Identity IDs to be assigned to this Data Factory."
+  type        = list(string)
+  default     = null
+}

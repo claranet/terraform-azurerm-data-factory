@@ -89,6 +89,8 @@ module "data_factory" {
 | extra\_tags | Additional tags to associate with your Data Factory. | `map(string)` | `{}` | no |
 | github\_configuration | Github configuration for data factory. For arguments, please refer to [documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#github_configuration). | `map(string)` | `null` | no |
 | global\_parameters | Global parameters for data factory. For arguments, please refer to [documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#global_parameter). | `list(map(string))` | `[]` | no |
+| identity\_ids | Specifies a list of User Assigned Managed Identity IDs to be assigned to this Data Factory. | `list(string)` | `null` | no |
+| identity\_type | Specifies the type of Managed Service Identity that should be configured on this Data Factory. Possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned` (to enable both). | `string` | `"SystemAssigned"` | no |
 | integration\_runtime\_configuration | Parameters used to configure `AzureSSIS` integration runtime:<br/>    `node_size` (optional, defaults to `Standard_D2_v3`)<br/>    `number_of_nodes` (optional, defaults to `1`)<br/>    `max_parallel_executions_per_nodes` (optional, defaults to `1`)<br/>    `edition` (optional, defaults to `Standard`)<br/>    `license_type` (optional, defaults to `LicenseIncluded`)<br/>  Parameters used to configure `Azure` integration runtime<br/>    `cleanup_enabled` (optional, defaults to `true`)<br/>    `compute_type` (optional, defaults to `General`)<br/>    `core_count` (optional, defaults to `8`)<br/>    `time_to_live_min` (optional, defaults to `0`)<br/>    `virtual_network_enabled` (optional, defaults to `false`) | `map(any)` | `{}` | no |
 | integration\_runtime\_custom\_name | Name of the integration\_runtime resource. | `string` | `null` | no |
 | integration\_runtime\_description | Integration runtime description. | `string` | `null` | no |
@@ -110,10 +112,10 @@ module "data_factory" {
 | Name | Description |
 |------|-------------|
 | id | Data Factory id. |
+| identity\_principal\_id | Data Factory system identity principal ID. |
 | integration\_runtime | Data Factory integration runtime resource object. |
 | integration\_runtime\_id | Data Factory integration runtime id. |
 | integration\_runtime\_type | Data Factory integration runtime type. |
-| managed\_identity | Data Factory Managed Identity. |
 | name | Data Factory name. |
 | resource | Data Factory resource object. |
 | self\_hosted\_integration\_runtime\_primary\_authorization\_key | The self hosted integration runtime primary authentication key. |

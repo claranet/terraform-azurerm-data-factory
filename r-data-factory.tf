@@ -28,8 +28,12 @@ resource "azurerm_data_factory" "main" {
     }
   }
 
-  identity {
-    type = "SystemAssigned"
+  dynamic "identity" {
+    for_each = var.identity_type[*]
+    content {
+      type         = var.identity_type
+      identity_ids = endswith(var.identity_type, "UserAssigned") ? var.identity_ids : null
+    }
   }
 
   dynamic "vsts_configuration" {
