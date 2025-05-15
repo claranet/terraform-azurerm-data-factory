@@ -15,8 +15,8 @@ output "name" {
 
 output "identity_principal_id" {
   description = "Data Factory system identity principal ID."
-  value       = try(azurerm_data_factory.main.identity[0], null)
-
+  value       = try(azurerm_data_factory.main.identity[0].principal_id, null)
+}
 
 output "integration_runtime" {
   description = "Data Factory integration runtime resource object."
