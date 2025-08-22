@@ -64,7 +64,7 @@ module "data_factory" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.0.0 |
+| diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.1.0 |
 
 ## Resources
 
