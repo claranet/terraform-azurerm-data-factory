@@ -1,3 +1,21 @@
+## 8.1.3 (2026-03-27)
+
+### Bug Fixes
+
+* **trivy:** 🐛 drop unsafe trivy pre-commit 🔒️ 5357811
+
+### Code Refactoring
+
+* update module structure and Github actions 👷 1686cf9
+
+### Miscellaneous Chores
+
+* **AI:** 🤖 add AI Agents instructions for Contributing 90f1d6b
+* **deps:** 🔗 bump tflint rules version 8cbdaea
+* **deps:** update dependency trivy to v0.69.2 58c124d
+* **deps:** update dependency trivy to v0.69.3 858683c
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.11 c9cbc9f
+
 ## 8.1.2 (2026-02-13)
 
 ### Code Refactoring
