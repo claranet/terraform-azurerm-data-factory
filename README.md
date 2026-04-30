@@ -56,20 +56,20 @@ module "data_factory" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azurecaf | >= 1.2.28 |
 | azurerm | ~> 4.9 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.2.0 |
 
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azurecaf_name.data_factory_name](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/resources/name) | resource |
 | [azurerm_data_factory.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory) | resource |
 | [azurerm_data_factory_integration_runtime_azure.integration_runtime](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory_integration_runtime_azure) | resource |
@@ -79,7 +79,7 @@ module "data_factory" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | azure\_devops\_configuration | Azure DevOps configuration for data factory. For arguments, please refer to [documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory#vsts_configuration). | `map(string)` | `null` | no |
 | client\_name | Client name/account used in naming. | `string` | n/a | yes |
 | custom\_name | Custom name of the Data Factory, generated if not set. | `string` | `null` | no |
@@ -110,7 +110,7 @@ module "data_factory" {
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | id | Data Factory id. |
 | identity\_principal\_id | Data Factory system identity principal ID. |
 | integration\_runtime | Data Factory integration runtime resource object. |
