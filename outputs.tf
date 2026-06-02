@@ -1,6 +1,7 @@
 output "resource" {
   description = "Data Factory resource object."
   value       = azurerm_data_factory.main
+  sensitive   = true
 }
 
 output "id" {
