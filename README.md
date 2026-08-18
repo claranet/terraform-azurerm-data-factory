@@ -58,14 +58,14 @@ module "data_factory" {
 
 | Name | Version |
 | ---- | ------- |
-| azurecaf | >= 1.2.28 |
-| azurerm | ~> 4.9 |
+| azurecaf | ~> 1.3.0 |
+| azurerm | ~> 5.0 |
 
 ## Modules
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.2.0 |
+| diagnostics | claranet/diagnostic-settings/azurerm | ~> 9.0 |
 
 ## Resources
 
